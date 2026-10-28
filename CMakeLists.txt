@@ -31,6 +31,11 @@ target_sources(MetalTune PRIVATE
     Source/PluginEditor.h
 )
 
+# Desactiva la búsqueda de cabeceras obsoletas de VST2
+target_compile_definitions(MetalTune PUBLIC
+    JUCE_VST3_CAN_REPLACE_VST2=0
+)
+
 target_link_libraries(MetalTune PRIVATE
     juce::juce_audio_utils
     juce::juce_dsp
